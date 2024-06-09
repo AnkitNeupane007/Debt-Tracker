@@ -77,3 +77,7 @@ def add_record(request):
             messages.success(request, 'New record added')
             return redirect('home')
     return render(request, 'add_record.html', {'form': form})
+
+@login_required(login_url='login')
+def user_profile(request):
+    return render(request, 'user_profile.html', {})

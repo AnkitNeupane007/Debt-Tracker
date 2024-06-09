@@ -6,9 +6,11 @@
 
 <div class="card d-flex flex-col" style="max-width: 18rem">
     <h5 class="card-header d-flex justify-content-between align-items-center">{{ person_record.name }}
-        <a href="{% url 'delete_record' person_record.id %}" ><span class="material-symbols-outlined bg-danger btn btn-circle text-white p-1">
-delete
-</span></a>
+        <a href="{% url 'delete_record' person_record.id %}" class="btn btn-circle">
+            <span class="material-symbols-outlined bg-danger btn btn-circle text-white p-1">
+                delete
+            </span>
+        </a>
     </h5>
 
 
