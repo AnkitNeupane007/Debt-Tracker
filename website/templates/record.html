@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Record:</h1>
+
+<div class="card d-flex flex-col" style="max-width: 18rem">
+    <h5 class="card-header d-flex justify-content-between align-items-center">{{ person_record.name }}
+        <a href="{% url 'delete_record' person_record.id %}" ><span class="material-symbols-outlined bg-danger btn btn-circle text-white p-1">
+delete
+</span></a>
+    </h5>
+
+
+  <div class="card-body">
+    <!-- <h5 class="card-title">Special title treatment</h5> -->
+
+        <p class="card-text">
+            <strong> Email: </strong> {{ person_record.email }} <br>
+            <strong> Phone: </strong> {{ person_record.phone }} <br>
+            <strong> Amount: </strong> {{ person_record.amount }}
+        </p>
+    <a href="#" class="btn btn-dark">Remind this person</a>
+
+  </div>
+
+</div>
+<br>
+<a href="{% url 'home' %}" class="btn btn-dark">Back</a>
+
+
+
+{% endblock %}
