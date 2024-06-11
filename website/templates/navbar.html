@@ -15,9 +15,6 @@
           <a class="nav-link" href={% url 'home' %}>Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href=>Log Out</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href={% url 'add_record' %}>Add record</a>
         </li>
         {% else %}
@@ -38,7 +35,7 @@
             </span>
           </a>
           <ul class="dropdown-menu dropdown-menu-end ">
-            <li><a class="dropdown-item  hover-bg-dark" href={% url 'user_profile' %}>Profile</a></li>
+            <li><a class="dropdown-item  hover-bg-dark" href={% url 'user_profile' user.username %}>Profile</a></li>
             <li><hr class="dropdown-divider" ></li>
             <li><a class="dropdown-item  hover-bg-dark" href={% url 'logout' %}>Log Out</a></li>
           </ul>

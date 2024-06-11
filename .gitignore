@@ -162,3 +162,6 @@ cython_debug/
 # Specific to this project:
 # Ignore the mydb.py file
 mydb.py
+
+# Ignore the environment variables
+.env

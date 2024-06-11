@@ -6,7 +6,7 @@
 
 <div class="card d-flex flex-col" style="max-width: 18rem">
     <h5 class="card-header d-flex justify-content-between align-items-center">{{ person_record.name }}
-        <a href="{% url 'delete_record' person_record.id %}" class="btn btn-circle">
+        <a href="{% url 'delete_record' pk=person_record.id %}" class="btn btn-circle">
             <span class="material-symbols-outlined bg-danger btn btn-circle text-white p-1">
                 delete
             </span>
@@ -22,7 +22,7 @@
             <strong> Phone: </strong> {{ person_record.phone }} <br>
             <strong> Amount: </strong> {{ person_record.amount }}
         </p>
-    <a href="#" class="btn btn-dark">Remind this person</a>
+    <a href="{% url 'send_reminder' person_record.id %}" class="btn btn-dark">Remind this person</a>
 
   </div>
 
