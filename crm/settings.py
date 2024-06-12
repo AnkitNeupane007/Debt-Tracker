@@ -130,11 +130,11 @@ EMAIL_USE_SSL = False
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 
-# HTTPS Configuration
-SECURE_SSL_REDIRECT = True
+# # HTTPS Configuration
+# SECURE_SSL_REDIRECT = True
 
-# Session Cookie Settings
-SESSION_COOKIE_SECURE = True
+# # Session Cookie Settings
+# SESSION_COOKIE_SECURE = True
 
 # Cookie SameSite Policy
 CSRF_COOKIE_SAMESITE = 'Strict'
