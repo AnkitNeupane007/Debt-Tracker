@@ -1,30 +1,40 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %}{% block title %}
+<title>Login</title>
+{% endblock %} {% block content %}
 
-{% block content %}
+<div class="col-md-6 offset-md-3">
+	<h1 class="text-center mb-3">Login</h1>
 
-    <div class="col-md-6 offset-md-3">
+	<form action="{% url 'login' %}" method="POST" autocomplete="off">
+		{% csrf_token %}
 
-        <h1 class="text-center mb-3">Login</h1>
+		<div class="mb-3">
+			<input
+				type="text"
+				class="form-control"
+				name="username"
+				placeholder="Username"
+				required
+			/>
+		</div>
+		<div class="mb-3">
+			<input
+				type="password"
+				class="form-control"
+				name="password"
+				placeholder="Password"
+				required
+			/>
+		</div>
 
-        <form action="{% url 'login' %}" method="POST">
-            {% csrf_token %}
-
-            <div class="mb-3">
-                <input type="text" class="form-control" name="username" placeholder="Username" required>
-            </div>
-            <div class="mb-3">
-                <input type="password" class="form-control" name="password" placeholder="Password" required>
-            </div>
-
-            <p class="text-center text-sm">Don't have an account? Create one <a href="{% url 'register' %}"> here </a></p>
-            <div class="text-center">
-                <button type="submit" class="btn btn-secondary">Login</button>
-            </div>
-
-        </form>
-
-    </div>
-
-
+		<p class="text-center text-sm">
+			Don't have an account? Create one
+			<a href="{% url 'register' %}"> here </a>
+		</p>
+		<div class="text-center">
+			<button type="submit" class="btn btn-secondary">Login</button>
+		</div>
+	</form>
+</div>
 
 {% endblock %}

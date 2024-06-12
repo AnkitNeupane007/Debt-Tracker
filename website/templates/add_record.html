@@ -1,20 +1,17 @@
-{% extends 'base.html' %}
-
-{% block content %}
+{% extends 'base.html' %} {% block title %}
+<title>Add Record</title>
+{% endblock %} {% block content %}
 
 <div class="col-md-6 offset-md-3">
-<h1 class="text-center mb-3">Add Debt Record</h1>
+	<h1 class="text-center mb-3">Add Debt Record</h1>
 
-<form method="POST" action="{% url 'add_record' %}">
-    {% csrf_token %}
+	<form method="POST" action="{% url 'add_record' %}" autocomplete="off">
+		{% csrf_token %} {{form.as_p}}
 
-    {{form.as_p}}
-
-<div class="text-center">
-    <button type="submit" class="btn btn-secondary">Add record</button>
-</div>
-
-</form>
+		<div class="text-center">
+			<button type="submit" class="btn btn-secondary">Add record</button>
+		</div>
+	</form>
 </div>
 
 {% endblock %}

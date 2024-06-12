@@ -1,38 +1,31 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %}{% block title %}
+<title>Home</title>
+{% endblock %} {% block content %}
 
-{% block content %}
+<div class="text-center">
+	<h1 class="">Debt Records</h1>
+</div>
+<table class="table table-hover table-striped table-bordered">
+	<thead class="table-dark">
+		<tr>
+			<th scope="col">Name</th>
+			<th scope="col">Email</th>
+			<th scope="col">Phone</th>
+			<th scope="col">Amount</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% if records %} {% for record in records %}
+		<tr>
+			<td><a href="{% url 'record' record.pk %}">{{ record.name }} </a></td>
+			<td>{{ record.email }}</td>
+			<td>{{ record.phone }}</td>
+			<td>{{ record.amount }}</td>
+		</tr>
+		{% endfor %} {% endif %}
+	</tbody>
+</table>
 
-    <div class="text-center">
-        <h1 class="">Debt Records</h1>
-    </div>
-    <table class="table table-hover table-striped table-bordered">
-      <thead class="table-dark">
-        <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Email</th>
-          <th scope="col">Phone</th>
-          <th scope="col">Amount</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% if records %}
-            {% for record in records %}
-                <tr>
-                    <td><a href="{% url 'record' record.pk %}">{{ record.name }} </a></td>
-                    <td>{{ record.email }}</td>
-                    <td>{{ record.phone }}</td>
-                    <td>{{ record.amount }}</td>
-                </tr>
-            {% endfor %}
-        {% endif %}
-      </tbody>
-    </table>
-
-
-     <br/>
-
-
-
-
+<br />
 
 {% endblock %}
